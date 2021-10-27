@@ -26,6 +26,14 @@
         </ul>
         <hr>
 
+        <%
+            String adad = null;
+            if(session.getAttribute("userID") != null){
+                adad = (String)session.getAttribute("userID");
+            }
+
+
+            if (adad != null){%>
         <li>
             <a href="#" class="nav-link link-dark">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
@@ -41,6 +49,9 @@
             <li><a href="#">메뉴얼</a></li>
         </ul>
         <hr>
+        <%}
+        %>
+
 
         <li>
             <a href="#" class="nav-link link-dark">

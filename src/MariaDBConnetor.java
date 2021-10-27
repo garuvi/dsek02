@@ -17,7 +17,7 @@ public class MariaDBConnetor {
         }
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://" +
+            con = DriverManager.getConnection("jdbc:mariadb://" +
                     server + "/" +
                     database +
                     "?useSSL=false", user_name, password); // SSL 실행 확인
@@ -32,4 +32,7 @@ public class MariaDBConnetor {
                 con.close();
         } catch (SQLException e) {}
     }
+
+
+
 }

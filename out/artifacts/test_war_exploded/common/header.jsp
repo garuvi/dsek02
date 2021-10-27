@@ -1,3 +1,4 @@
+<%@ page import="java.util.Enumeration" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -78,6 +79,30 @@
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">HTMS</a></li>
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">정기점검등록</a></li>
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">원격지원</a></li>
+
+        <%
+                String userID = null;
+                if(session.getAttribute("userID") != null){
+                    userID = (String)session.getAttribute("userID");
+                }
+
+            // 이미 로그인했으면 다시 로그인을 할 수 없게 한다
+            if(userID == null){%>
+                            <li class="nav-item"><a href="/helpdesk/login.jsp" class="nav-link px-2 text-white">로그인</a></li>
+                            <%}
+            else if (userID != null){%>
+                            <li class="nav-item"><a href="/helpdesk/logout.jsp" class="nav-link px-2 text-white">로그아웃</a></li>
+                            <%}
+
+        %>
+
+
+
+
+
+
+
+
                         </ul>
                         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                             <input type="search" class="form-control form-control" placeholder="Search..." aria-label="Search">

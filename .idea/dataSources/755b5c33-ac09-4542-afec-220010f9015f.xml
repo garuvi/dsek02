@@ -1090,69 +1090,223 @@
 </ObjectGrants>
     </user>
     <table id="344" parent="3" name="menu"/>
-    <table id="345" parent="3" name="userao"/>
-    <column id="346" parent="344" name="no">
+    <table id="345" parent="3" name="tbl_board"/>
+    <table id="346" parent="3" name="tbl_boardfile"/>
+    <table id="347" parent="3" name="tbl_boardgroup"/>
+    <table id="348" parent="3" name="tbl_boardreply"/>
+    <table id="349" parent="3" name="user"/>
+    <column id="350" parent="344" name="no">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="347" parent="344" name="menuTitle">
+    <column id="351" parent="344" name="menuTitle">
       <Position>2</Position>
       <DataType>varchar(200)|0s</DataType>
     </column>
-    <column id="348" parent="344" name="menuUrl">
+    <column id="352" parent="344" name="menuUrl">
       <Position>3</Position>
       <DataType>varchar(500)|0s</DataType>
     </column>
-    <column id="349" parent="344" name="menuLocal">
+    <column id="353" parent="344" name="menuLocal">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="350" parent="344" name="menuSet">
+    <column id="354" parent="344" name="menuSet">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="351" parent="344" name="menuLv">
+    <column id="355" parent="344" name="menuLv">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="352" parent="344" name="menuLeft">
+    <column id="356" parent="344" name="menuLeft">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <key id="353" parent="344" name="PRIMARY">
+    <key id="357" parent="344" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>no</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="354" parent="345" name="userID">
+    <column id="358" parent="345" name="BGNO">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="359" parent="345" name="BRDNO">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="360" parent="345" name="BRDTITLE">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="361" parent="345" name="BRDWRITER">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="362" parent="345" name="BRDMEMO">
+      <Position>5</Position>
+      <DataType>varchar(4000)|0s</DataType>
+    </column>
+    <column id="363" parent="345" name="BRDDATE">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="364" parent="345" name="BRDHIT">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="365" parent="345" name="BRDDELETEFLAG">
+      <Position>8</Position>
+      <DataType>char(1)|0s</DataType>
+    </column>
+    <key id="366" parent="345" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BRDNO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="367" parent="346" name="FILENO">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="368" parent="346" name="BRDNO">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="369" parent="346" name="FILENAME">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="370" parent="346" name="REALNAME">
+      <Position>4</Position>
+      <DataType>varchar(30)|0s</DataType>
+    </column>
+    <column id="371" parent="346" name="FILESIZE">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <key id="372" parent="346" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>FILENO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="373" parent="347" name="BGNO">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="374" parent="347" name="BGNAME">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="375" parent="347" name="BGPARENT">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="376" parent="347" name="BGDELETEFLAG">
+      <Position>4</Position>
+      <DataType>char(1)|0s</DataType>
+    </column>
+    <column id="377" parent="347" name="BGUSED">
+      <Position>5</Position>
+      <DataType>char(1)|0s</DataType>
+    </column>
+    <column id="378" parent="347" name="BGREPLY">
+      <Position>6</Position>
+      <DataType>char(1)|0s</DataType>
+    </column>
+    <column id="379" parent="347" name="BGREADONLY">
+      <Position>7</Position>
+      <DataType>char(1)|0s</DataType>
+    </column>
+    <column id="380" parent="347" name="BGDATE">
+      <Position>8</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="381" parent="347" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BGNO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="382" parent="348" name="BRDNO">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="383" parent="348" name="RENO">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="384" parent="348" name="REWRITER">
+      <Position>3</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="385" parent="348" name="REMEMO">
+      <Position>4</Position>
+      <DataType>varchar(500)|0s</DataType>
+    </column>
+    <column id="386" parent="348" name="REDATE">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="387" parent="348" name="REDELETEFLAG">
+      <Position>6</Position>
+      <DataType>varchar(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="388" parent="348" name="REPARENT">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="389" parent="348" name="REDEPTH">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="390" parent="348" name="REORDER">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <key id="391" parent="348" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>RENO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="392" parent="349" name="userID">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="355" parent="345" name="userPassword">
+    <column id="393" parent="349" name="userPassword">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="356" parent="345" name="userName">
+    <column id="394" parent="349" name="userName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="357" parent="345" name="userGender">
+    <column id="395" parent="349" name="userGender">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="358" parent="345" name="userEmail">
+    <column id="396" parent="349" name="userEmail">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="359" parent="345" name="userLv">
+    <column id="397" parent="349" name="userLv">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
     </column>
-    <key id="360" parent="345" name="PRIMARY">
+    <key id="398" parent="349" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userID</ColNames>
       <Primary>1</Primary>
