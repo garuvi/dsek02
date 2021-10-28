@@ -23,7 +23,7 @@
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('이미 로그인이 되어 있습니다')");
-        script.println("location.href='http://localhost:8080/helpdesk'");
+        script.println("location.href='/helpdesk'");
         script.println("</script>");
     }
 
@@ -34,7 +34,7 @@
         session.setAttribute("userID", user.getUserID());
         script.println("<script>");
         script.println("alert('로그인 성공')");
-        script.println("location.href='http://localhost:8080/helpdesk'");
+        script.println("location.href='/helpdesk'");
         script.println("</script>");
     } else if (result == 0) {
         PrintWriter script = response.getWriter();

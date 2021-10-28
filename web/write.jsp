@@ -1,53 +1,40 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Garuvi
-  Date: 2021-10-27
-  Time: 오후 11:50
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="java.io.PrintWriter" %>
 
+<%
+    String userIDbbs = null;
+    if (session.getAttribute("userID") != null) {
+        userIDbbs = (String) session.getAttribute("userID");
+    }
+%>
 <%@ include file="/common/header.jsp" %>
-
 <%@ include file="/common/nav.jsp"%>
-
-
-
-
 <div class="col-md-10 p-5" >
     <h3>
         공지사항
     </h3>
     <hr>
-
-    <form>
-        <fieldset>
-            <legend>글쓰기</legend>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-4">카테고리</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-4">제목</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-4">파일선택</label>
-                <input class="form-control" type="file" id="formFile">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-4">이미지선택</label>
-                <input class="form-control" type="file" id="formFile">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-4">내용</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary mt-5" style="margin-left: 400px">Submit</button>
-        </fieldset>
-    </form>
-
+    <div class="row">
+        <form method="post" action="writeAction.jsp">
+            <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+                <thead>
+                <tr>
+                    <th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px"></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+            <input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+        </form>
+    </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <%@ include file="/common/footer.jsp"%>
